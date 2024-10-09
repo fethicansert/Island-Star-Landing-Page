@@ -1,39 +1,144 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-header{
-    position: fixed;
-    z-index: 999;
+:root {
+    --headerColor: #e4c97e;
 }
 
-.hero-section{
+header {
+    position: fixed;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0 4rem;
+
+    top: -20%;
+    animation: headerAnimation 1s ease forwards;
+
+    /* color: var(--headerColor); */
+    color: white;
+
+    font-family: "Playfair Display", serif;
+}
+
+.header-nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.header-nav-list-item {
+    margin-left: 4rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.header-nav-list-item:hover {
+    color: var(--headerColor);
+}
+
+.header-nav-list-item.active {
+    color: var(--headerColor);
+}
+
+/* HERO SECTION */
+
+.hero-section {
     height: 100vh;
     background-image: url('./images/image3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.overlay{
+.text,
+.coming-soon-text {
+    text-align: center;
+    z-index: 99;
+    color: white;
+    /* margin-left: 2rem; */
+
+    font-weight: 700;
+    position: relative;
+}
+
+.text {
+    font-size: 4rem;
+    animation: heroTextAnimationLeft 1.5s ease;
+}
+
+.coming-soon-text {
+    font-size: 5rem;
+    animation: heroTextAnimationRight 1.5s ease 100ms;
+    text-transform: uppercase;
+}
+
+
+.overlay {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 1);
-    animation: fadeOverlay 2.5s ease forwards 300ms;
+    animation: fadeOverlay 2s ease forwards 100ms;
     opacity: .1;
 }
 
 
+/* ANIMATIONS */
 @keyframes fadeOverlay {
-    0%{
+    0% {
         opacity: .1;
     }
 
-    100%{
-        opacity: .5;
+    100% {
+        opacity: .45;
+    }
+}
+
+@keyframes headerAnimation {
+    0% {
+        top: -30%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes heroTextAnimationLeft {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+@keyframes heroTextAnimationRight {
+
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0%;
     }
 }
