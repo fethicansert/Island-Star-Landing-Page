@@ -276,6 +276,7 @@ header::before {
     transform: translate(-50%, -50%);
 }
 
+
 @keyframes arrowCircleOpacity {
     0% {
         opacity: .8;
