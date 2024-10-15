@@ -188,7 +188,6 @@ header {
     height: 100vh;
     background: rgba(0, 0, 0, 0.369);
     overflow: hidden;
-    text-align: center;
 }
 
 .image-slider-container {
@@ -226,31 +225,43 @@ header {
 .text,
 .glowing-text-wrapper {
     z-index: 99;
-    transform: translateX(-50%);
-    left: 50%;
     position: fixed;
     /* margin-left: 1rem; */
 }
 
 .glowing-text-wrapper {
-    top: 40%;
+    top: 15%;
+    /* transform: translateX(-50%); */
+    /* left: 50%; */
+    left: 0;
+    margin-left: .7rem;
 }
 
 .glowing-text {
     color: var(--goldColor);
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 450;
-    width: max-content;
+    width: 320px;
+    /* line-height: 55px; */
+    /* text-align: center; */
     animation: soft-glow 1.7s ease-in-out infinite, glowingTextScale 2s ease infinite;
 }
 
+.glowing-text span {
+    font-size: 1.5rem;
+}
+
 .text {
-    font-size: 1.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .85rem;
     font-weight: 300;
-    color: rgba(255, 255, 255, 1);
-    top: 33%;
-    width: 350px;
+    color: rgba(255, 255, 255, .9);
+    top: 82%;
+    text-align: center;
+    width: 290px;
+    margin-left: .7rem;
 }
 
 .arrows-container {
@@ -262,7 +273,7 @@ header {
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.7); */
     left: 50%;
     transform: translateX(-50%);
-    bottom: 3%;
+    bottom: 1%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -272,8 +283,8 @@ header {
 
 .arrow-circle {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     position: relative;
@@ -286,9 +297,11 @@ header {
 
 .arrow-circle::before {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     content: '';
     display: block;
-    width: 95%;
+    width: 45%;
     height: 1px;
     background: rgba(255, 255, 255, 0.5);
     top: 115%;
@@ -300,6 +313,7 @@ header {
 }
 
 .arrow-circle i {
+    font-size: .8rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -307,6 +321,22 @@ header {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.hero-btn {
+    /* font-size: 1rem; */
+    font-weight: 450;
+    font-family: inherit;
+    z-index: 99;
+    position: fixed;
+    top: 32%;
+    left: 0;
+    margin-left: .8rem;
+    color: rgba(255, 255, 255, 0.85);
+    background: transparent;
+    border: 1px solid #e7c566d3;
+    padding: .5rem 1rem;
+    box-shadow: 0 0 3px rgba(212, 175, 55, 0.6);
+    /* animation: soft-glow-btn 1.7s ease-in-out infinite */
+}
 
 /* ANIMATIONS */
 
@@ -330,7 +360,7 @@ header {
     }
 
     50% {
-        scale: 1.05;
+        scale: 1.02;
     }
 
     100% {
@@ -386,7 +416,7 @@ header {
 
 
     100% {
-        bottom: 3%;
+        bottom: 1%;
     }
 }
 
