@@ -2,138 +2,148 @@
 <html lang="en">
 
 <head>
+    <title>Island Star</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="This page is Island Star Development landing page.">
+
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/0b8d62ed51.js" crossorigin="anonymous"></script>
+
+
+    <script defer src="https://kit.fontawesome.com/0b8d62ed51.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="preload" as="image" href="images/logo.webp">
+
+    <script defer src="index.js"></script>
+
 
 </head>
 
 <body>
     <header>
 
+        <img class="header-logo" src="images/logo.webp"
+            alt="Logo of Island Star Developent Houses Star and one big line top of these.">
 
-        <img class="header-logo" src="images/logo.png" width="140px">
-
-
-        <div class="header-parent-container">
-
-            <div class="header-container">
-
-                <ul class="header-info-list">
-
-                    <li class="header-info-list-item">
-                        <i class="fa-solid fa-phone"></i>
-                        +90 533 882 3063
-                    </li>
-
-                    <li class="header-info-list-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        islandstardevelopent@gmail.com
-                    </li>
-
-                    <li class="header-info-list-item">
-                        <i class="fa-solid fa-location-pin"></i>
-                        Cyprus
-                    </li>
-
-                </ul>
-
-
-                <ul class="header-social-list">
-
-                    <li class="header-social-list-item">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </li>
-
-                    <li class="header-social-list-item">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </li>
-
-                    <li class="header-social-list-item">
-                        <i class="fa-brands fa-instagram"></i>
-                    </li>
-
-                    <li class="header-social-list-item">
-                        <i class="fa-brands fa-youtube"></i></i>
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="header-container">
-                <nav class="header-nav">
-                    <ul class="header-nav-list">
-
-                        <li class="header-nav-list-item active">Home</li>
-
-                        <li class="header-nav-list-item">Projects</li>
-
-                        <li class="header-nav-list-item">Schemas</li>
-
-                        <li class="header-nav-list-item">Galery</li>
-
-                    </ul>
-                </nav>
-
-                <nav class="header-nav">
-                    <ul class="header-nav-list">
-
-                        <li class="header-nav-list-item">About Us</li>
-
-                        <li class="header-nav-list-item">Contact</li>
-
-                    </ul>
-                </nav>
-            </div>
+        <div id="header-burger-menu" class="burger-menu-icon-container">
+            <span id="burger-menu-icon-top" class="burger-menu-icon-top"></span>
+            <span class="burger-menu-icon-mid"></span>
+            <span id="burger-menu-icon-bottom" class="burger-menu-icon-bottom"></span>
         </div>
+
+        <nav id="header-nav" class="header-nav">
+
+            <ul class="header-nav-list">
+
+                <li class="header-nav-list-item">Home</li>
+                <li class="header-nav-list-item">Projects</li>
+                <li class="header-nav-list-item">Shemas</li>
+                <li class="header-nav-list-item">Galery</li>
+                <li class="header-nav-list-item">About Us</li>
+                <li class="header-nav-list-item">Contact</li>
+
+            </ul>
+
+            <hr id="line-break" class="line-break" />
+
+            <ul class="header-social-list">
+
+                <li class="header-social-list-item">
+                    <i class="fa-solid fa-phone"></i> +90 533 882 3063
+                </li>
+
+                <li class="header-social-list-item">
+                    <i class="fa-solid fa-envelope"></i>islandstardevelopent@gmail.com
+                </li>
+
+                <li class="header-social-list-item">
+                    <i class="fa-solid fa-location-pin"></i>Cyprus
+                </li>
+
+                <li class="header-social-list-item platform">
+                    <i class="fa-brands fa-facebook-f platform"></i>
+                    <i class="fa-brands fa-instagram platform"></i>
+                    <i class="fa-brands fa-youtube platform"></i></i>
+                </li>
+
+            </ul>
+        </nav>
+
+        <span class="header-bottom-line"></span>
 
     </header>
 
     <section class="hero-section">
 
+        <div id="image-slider-container" class="image-slider-container">
 
-        <p class="text">We are Building the Place <br />Where Prestige and Comfort Meet in Cyprus</p>
+            <img class="hero-imgae" alt="Lux house and big tree" srcset="
+                    images/home1.webp 3000w,
+                    images/home1_75.webp 2000w,
+                    images/home1_50.webp 900w
+                    " src="images/home1.webp">
 
-        <p class="glowing-text">
-            <!-- <span class="glowing-text-line-left">-</span> -->
-            Coming Soon
-            <!-- <span class="glowing-text-line-right">-</span> -->
-        </p>
+            <img class="hero-imgae" alt="Lux house and big tree" loading="lazy" srcset="
+                    images/home2.webp 3000w,
+                    images/home2_75.webp 2000w,
+                    images/home2_50.webp 900w
+                    " src="images/home2.webp">
 
-        <div class="arrows-container">
 
-            <div class="arrow-circle" id="arrow-circle-left">
+            <img class="hero-imgae" alt="Lux house and big tree" loading="lazy" srcset="
+                    images/home3.webp 3000w,
+                    images/home3_75.webp 2000w,
+                    images/home3_50.webp 900w
+                    " src="images/home3.webp">
+
+        </div>
+
+
+        <div id="hero-container" class="container">
+
+            <div class="glowing-text-wrapper">
+                <p class="glowing-text"><span>We Are</span><br class="hero-container-br" /> Coming Soon</p>
+            </div>
+
+            <p class="text">We are building the place where prestige and comfort meet in Cyprus.</p>
+
+            <div class="hero-btn-group">
+                <button class="hero-btn">Contact Us</button>
+                <button class="hero-btn">See Projects</button>
+            </div>
+
+
+        </div>
+
+
+        <div id="arrows-container" class="arrows-container">
+
+            <div id="arrow-circle-left" class="arrow-circle">
                 <i class="fa-solid fa-arrow-left"></i>
             </div>
 
-            <div class="arrow-circle" id="arrow-circle-right">
+            <div class="image-positions-container">
+                <span class="image-positon active"></span>
+                <span class="image-positon"></span>
+                <span class="image-positon"></span>
+            </div>
+
+            <div id="arrow-circle-right" class="arrow-circle">
                 <i class="fa-solid fa-arrow-right"></i>
             </div>
         </div>
 
-        <div class="hero-image-container" id="hero-image-container">
-
-            <div class="image-box">
-                <img class="hero-image" src="../images/image4.jpg">
-            </div>
-
-            <div class="image-box">
-                <img class="hero-image" src="../images/image6.jpg">
-            </div>
-
-            <div class="image-box">
-                <img class="hero-image" src="../images/image7.jpg">
-            </div>
-
-        </div>
         <div class="overlay"></div>
+
     </section>
 
 
-    <script src="index.js"></script>
+
 </body>
 
 </html>
