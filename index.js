@@ -2,7 +2,7 @@
 const headerBurgerMenu = document.getElementById('header-burger-menu');
 const headerNav = document.getElementById('header-nav');
 const headerListItems = document.querySelectorAll('.header-nav li');
-const lineBreak = document.getElementById('line-break');
+const lineBreak = document.getElementById('line-break')
 const burgerMenuTop = document.getElementById('burger-menu-icon-top');
 const burgerMenuBottom = document.getElementById('burger-menu-icon-bottom')
 
@@ -17,8 +17,12 @@ const arrowCircleLeft = document.getElementById('arrow-circle-left');
 const arrowCircleRight = document.getElementById('arrow-circle-right');
 const imagePositions = document.querySelectorAll('.image-positon');
 
+
+
 //Current position of image
 let currentPosition = 0;
+
+
 
 // TOOGLE active classes when burger menu clicked.
 const activeHeaderNav = () => {
@@ -74,4 +78,26 @@ function changeImagePosition(currentPosition) {
             position.classList.add('active');
         }
     });
-}
+};
+
+
+document.querySelectorAll('.hero-btn').forEach(button => {
+    button.addEventListener('touchstart', () => {
+        button.classList.add('active');
+    });
+    button.addEventListener('touchend', () => {
+        button.classList.remove('active');
+    });
+});
+
+document.querySelectorAll('.arrow-circle').forEach(button => {
+    button.addEventListener('touchstart', () => {
+        button.classList.add('active');
+    });
+    button.addEventListener('touchend', () => {
+        button.classList.remove('active');
+    });
+});
+
+
+
