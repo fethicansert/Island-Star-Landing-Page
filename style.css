@@ -317,6 +317,7 @@ header {
     scale: 1.05;
 }
 
+
 .arrows-container {
     position: absolute;
     z-index: 999;
@@ -567,7 +568,7 @@ header {
         width: 150px;
         height: 80px;
         left: 85%;
-        bottom: 4%;
+        bottom: 3.5%;
     }
 
     .arrow-circle {
@@ -598,6 +599,24 @@ header {
         width: 25px;
     }
 
+}
+
+@keyframes swipeAnimation {
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: -40deg;
+    }
+
+    75% {
+        bottom: 140deg;
+    }
+
+    100% {
+        bottom: 0deg;
+    }
 }
 
 /* ANIMATIONS */
