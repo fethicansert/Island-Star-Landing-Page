@@ -19,6 +19,13 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+.header-wrapper{
+    width: 100%;
+    max-width: 1600px;
+    position: relative;
+    margin: 0 auto;
+}
+
 header {
     z-index: 999;
     position: absolute;
@@ -28,8 +35,10 @@ header {
     align-items: end;
     padding: .5rem 1.4rem;
     color: black;
-    transform: translateY(-130%);
+    transform: translateY(-130%) ;
     animation: headerAnimation 1.7s ease forwards 100ms;
+    
+    margin: 0 auto;
 }
 
 .header-bottom-line {
@@ -142,6 +151,7 @@ header {
     height: 7.4vh;
     max-height: 80px;
     font-size: clamp(.8rem, 2.5vh, 1rem);
+    font-weight: 450;
     display: flex;
     align-items: center;
 }
@@ -152,7 +162,6 @@ header {
 }
 
 .header-nav-list-item {
-    font-weight: 460;
     position: relative;
 }
 
@@ -265,9 +274,8 @@ header {
     text-transform: uppercase;
     font-size: clamp(2.3rem, 10.5vw, 2.65rem);
     font-weight: 450;
-    width: 350px;
     line-height: 37px;
-
+    width: max-content;
     animation:
         soft-glow 1.7s ease-in-out infinite 1.8s,
         glowingTextScale 2s ease infinite 1.8s
@@ -380,14 +388,36 @@ header {
 }
 
 /* RESPONSIVE STYLES */
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
+    header {
+        padding: .5rem 2rem;
+    }
+
+    .glowing-text {
+        font-size:3.7rem;
+        line-height: 55px;
+        width: max-content;
+    }
+    
+    .glowing-text span {
+        font-size: 2.6rem;
+    }
+    
+    .text {
+        font-size: .9rem;
+        font-weight: 300;
+        width: unset;
+    }
+}
+
+@media (min-width: 1024px) {
 
     /* HEADER */
     header {
         display: flex;
         justify-content: none;
         align-items: center;
-        padding: .5rem 6rem 0 6rem;
+        padding: .5rem 4rem 0 4rem;
         color: var(--headerTextColor)
     }
 
@@ -543,7 +573,6 @@ header {
     .text {
         font-size: 1.1rem;
         font-weight: 300;
-        width: max-content;
         animation: heroTextSlideMid 1.9s ease forwards;
         transform: translateX(220%);
     }
@@ -599,6 +628,29 @@ header {
         width: 25px;
     }
 
+}
+
+@media (min-width: 1440px) {
+    header {
+        padding: .5rem 6.3rem 0 6.3rem;
+    }
+    .glowing-text {
+        font-size: 5.3rem;
+        width: max-content;
+        line-height: 69px;
+    }
+
+    .glowing-text span {
+        font-size: 4.2rem;
+    }
+
+    .text {
+        font-size: 1.1rem;
+        font-weight: 300;
+        width: max-content;
+        animation: heroTextSlideMid 1.9s ease forwards;
+        transform: translateX(220%);
+    }
 }
 
 @keyframes swipeAnimation {
