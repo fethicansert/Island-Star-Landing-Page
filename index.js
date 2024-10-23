@@ -18,7 +18,25 @@ const arrowCircleRight = document.getElementById('arrow-circle-right');
 const imagePositions = document.querySelectorAll('.image-positon');
 
 
+const projectDetailArrowDown = document.querySelectorAll('.project-detail-arrow');
+const projectSubDetail = document.querySelectorAll('.projects-sub-detail');
+const projectSubDetailText = document.querySelectorAll('.projects-sub-detail-text');
 
+
+
+projectDetailArrowDown.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        projectSubDetail[index].classList.toggle('active');
+        projectSubDetailText[index].classList.toggle('active');
+        projectDetailArrowDown[index].classList.toggle('active');
+    });
+})
+
+// projectDetailArrowDown.addEventListener('click', () => {
+//     projectSubDetail.classList.toggle('active');
+//     projectSubDetailText.classList.toggle('active');
+//     projectDetailArrowDown.classList.toggle('active');
+// });
 //Current position of image
 let currentPosition = 0;
 
@@ -45,6 +63,8 @@ arrowCircleLeft.addEventListener('click', slideLeft);
 
 arrowCircleRight.addEventListener('click', slideRight);
 
+
+//FUNCTIONS
 
 //slide left to image 
 function slideLeft() {
