@@ -29,6 +29,7 @@ projectDetailArrowDown.forEach((item, index) => {
         projectSubDetail[index].classList.toggle('active');
         projectSubDetailText[index].classList.toggle('active');
         projectDetailArrowDown[index].classList.toggle('active');
+        document.querySelector('.project-detail-container').classList.toggle('active');
     });
 })
 
