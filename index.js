@@ -22,6 +22,7 @@ const projectDetailArrowDown = document.querySelectorAll('.project-detail-arrow'
 const projectSubDetail = document.querySelectorAll('.projects-sub-detail');
 const projectSubDetailText = document.querySelectorAll('.projects-sub-detail-text');
 
+let currentPosition = 0;
 
 
 projectDetailArrowDown.forEach((item, index) => {
@@ -33,13 +34,53 @@ projectDetailArrowDown.forEach((item, index) => {
     });
 })
 
-// projectDetailArrowDown.addEventListener('click', () => {
-//     projectSubDetail.classList.toggle('active');
-//     projectSubDetailText.classList.toggle('active');
-//     projectDetailArrowDown.classList.toggle('active');
-// });
-//Current position of image
-let currentPosition = 0;
+const intersectionOptions = {
+    root: null,
+    thresold: 0,
+    rootMargin: '0px 0px -7% 0px'
+}
+
+
+//OBSERVERS
+
+//Section Intersection Observer => helps me to animate elements when user intersect with observed element or section
+const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            document.querySelector('.project-title-line-long').classList.add('animate-long');
+            document.querySelector('.project-title-line-short').classList.add('animate-short');
+            observer.disconnect();
+        }
+    })
+}, intersectionOptions);
+
+observer.observe(document.querySelector('.projects-section'));
+
+
+const intersectionOptions2 = {
+    root: null,
+    thresold: 0,
+    rootMargin: '0px 0px -5% 0px'
+}
+
+const observer2 = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            if (entry.target.nextElementSibling.tagName === 'P') {
+                console.log(entry.target.nextElementSibling.className);
+                [...entry.target.nextElementSibling.children].forEach(span => span.style.textDecorationColor = '#e7c566ad');
+            }
+            entry.target.firstElementChild.style.opacity = '1';
+            entry.target.firstElementChild.style.transform = 'translateY(0%)';
+            if (entry.target.className === 'project-deal-title style-title') return observer2.disconnect();
+        }
+
+    });
+}, intersectionOptions2);
+
+document.querySelectorAll('.projects-section h3').forEach(header => observer2.observe(header));
+
+
 
 
 
@@ -55,9 +96,7 @@ const activeHeaderNav = () => {
     headerLists.forEach(item => item.classList.toggle('opacity'));
 }
 
-
 //LISTINERS
-
 headerBurgerMenu.addEventListener('click', activeHeaderNav);
 
 arrowCircleLeft.addEventListener('click', slideLeft);
