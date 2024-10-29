@@ -103,7 +103,8 @@
     position: absolute;
     width: 19px;
     height: 19px;
-    left: -1%;
+    left: -1.4%;
+    top: -1.4%;
     transform: translateY(-65%);
     transition: opacity 1s ease 250ms, transform 1.25s ease 200ms;
     opacity: 0;
@@ -149,9 +150,9 @@
 .project-support-text span,
 .project-deal-text span {
     text-decoration: underline;
-    /* text-decoration-thickness: 2px; */
+    text-decoration-thickness: 1.3px;
     text-decoration-color: #e7c56600;
-    transition: text-decoration-color 500ms ease 350ms;
+    transition: text-decoration-color 500ms ease 700ms;
 }
 
 .project-image-container {
@@ -210,7 +211,7 @@
 .project-investment-title,
 .project-pricing-title,
 .project-deal-title {
-    text-indent: 1px;
+    /* text-indent: 1px; */
     font-size: 1.7rem;
     margin: 2.5rem 0 .5rem 0;
     line-height: 34px;
@@ -256,11 +257,33 @@
 .projects-sub-detail {
     line-height: 22px;
     max-height: 0;
-    transition: all 400ms ease;
+    transition: all 600ms ease;
+}
+
+.detail-0-active {
+    max-height: 139px;
+}
+
+.detail-1-active {
+    max-height: 120px;
+}
+
+.detail-2-active {
+    max-height: 160px;
+}
+
+.detail-3-active {
+    max-height: 118px;
+}
+
+.detail-4-active,
+.detail-5-active,
+.detail-6-active {
+    max-height: 96px;
 }
 
 .projects-sub-detail.active {
-    max-height: 142px
+    max-height: 158px
 }
 
 .projects-sub-detail-text {
@@ -268,13 +291,13 @@
     font-weight: 400;
     font-size: .88rem;
     opacity: 0;
-    transition: opacity ease 10ms;
+    transition: opacity ease 200ms;
     padding: .3rem 0;
 }
 
 .projects-sub-detail-text.active {
     opacity: 1;
-    transition: opacity ease 400ms 250ms;
+    transition: opacity ease 400ms 400ms;
 }
 
 .project-detail-arrow {

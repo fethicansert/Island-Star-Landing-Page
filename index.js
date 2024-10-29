@@ -19,7 +19,7 @@ const imagePositions = document.querySelectorAll('.image-positon');
 
 
 const projectDetailArrowDown = document.querySelectorAll('.project-detail-arrow');
-const projectSubDetail = document.querySelectorAll('.projects-sub-detail');
+const projectSubDetails = document.querySelectorAll('.projects-sub-detail');
 const projectSubDetailText = document.querySelectorAll('.projects-sub-detail-text');
 
 let currentPosition = 0;
@@ -27,10 +27,11 @@ let currentPosition = 0;
 
 projectDetailArrowDown.forEach((item, index) => {
     item.addEventListener('click', () => {
-        projectSubDetail[index].classList.toggle('active');
+        console.log(index);
+        projectSubDetails[index].classList.toggle(`detail-${index}-active`);
         projectSubDetailText[index].classList.toggle('active');
         projectDetailArrowDown[index].classList.toggle('active');
-        document.querySelector('.project-detail-container').classList.toggle('active');
+        // document.querySelector('.project-detail-container').classList.toggle('active');
     });
 })
 
