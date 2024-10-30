@@ -317,8 +317,59 @@
 
 .project-plan-image {
     width: 100%;
+    height: 350px;
     display: block;
     margin: 0 auto;
+}
+
+.house-plan-slider-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    /* padding: 0 .1rem; */
+}
+
+.house-plan-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    transition: scale 100ms ease;
+}
+
+.house-plan-button:active {
+    scale: 1.08;
+}
+
+.house-plan-button:nth-child(1) img {
+    rotate: 90deg;
+    margin-right: .1rem;
+}
+
+.house-plan-button:nth-child(3) img {
+    rotate: -90deg;
+    margin-left: .1rem;
+}
+
+.project-plan-image-positions-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-plan-image-positon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    /* border-radius: 50%; */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.project-plan-image-positon.active {
+    background-color: var(--gold);
 }
 
 .project-google-map {

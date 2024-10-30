@@ -22,16 +22,25 @@ const projectDetailArrowDown = document.querySelectorAll('.project-detail-arrow'
 const projectSubDetails = document.querySelectorAll('.projects-sub-detail');
 const projectSubDetailText = document.querySelectorAll('.projects-sub-detail-text');
 
-let currentPosition = 0;
+const projectPlanButtons = document.querySelectorAll('.house-plan-button');
+const projectPlanImagePositons = document.querySelectorAll('.project-plan-image-positon');
+
+
+
+let homeCurrentImagePosition = 0;
+let planCurrentImagePosition = 0;
+
+
+
+projectPlanButtons[0].addEventListener('click', planImageSlideLeft);
+projectPlanButtons[1].addEventListener('click', planImageSlideRight);
 
 
 projectDetailArrowDown.forEach((item, index) => {
     item.addEventListener('click', () => {
-        console.log(index);
         projectSubDetails[index].classList.toggle(`detail-${index}-active`);
         projectSubDetailText[index].classList.toggle('active');
         projectDetailArrowDown[index].classList.toggle('active');
-        // document.querySelector('.project-detail-container').classList.toggle('active');
     });
 })
 
@@ -107,35 +116,58 @@ arrowCircleRight.addEventListener('click', slideRight);
 
 //FUNCTIONS
 
+function planImageSlideLeft() {
+    if (planCurrentImagePosition > 0) planCurrentImagePosition -= 1;
+    setPlanImage(planCurrentImagePosition);
+}
+
+function planImageSlideRight() {
+    if (planCurrentImagePosition < 3) planCurrentImagePosition += 1;
+    console.log(planCurrentImagePosition);
+    setPlanImage(planCurrentImagePosition);
+}
+
+function setPlanImage(index) {
+    document.querySelector('.project-plan-image').src = `./images/house_plan${index}.jpg`;
+    projectPlanImagePositons.forEach(item => {
+        if (item.classList.contains('active')) {
+            item.classList.remove('active');
+        }
+    })
+    projectPlanImagePositons[index].classList.add('active');
+}
+
+
+
 //slide left to image 
 function slideLeft() {
-    console.log(currentPosition);
-    if (currentPosition > 0) {
-        currentPosition = currentPosition - 100;
-        heroImageContainer.style.transform = `translateX(-${currentPosition}%)`;
-        changeImagePosition(currentPosition);
+    console.log(homeCurrentImagePosition);
+    if (homeCurrentImagePosition > 0) {
+        homeCurrentImagePosition = homeCurrentImagePosition - 100;
+        heroImageContainer.style.transform = `translateX(-${homeCurrentImagePosition}%)`;
+        changeImagePosition(homeCurrentImagePosition);
     }
 }
 
 //slide right to image 
 function slideRight() {
-    console.log(currentPosition);
-    if (currentPosition < 200) {
-        currentPosition = currentPosition + 100;
-        heroImageContainer.style.transform = `translateX(-${currentPosition}%)`;
-        changeImagePosition(currentPosition);
+    console.log(homeCurrentImagePosition);
+    if (homeCurrentImagePosition < 200) {
+        homeCurrentImagePosition = homeCurrentImagePosition + 100;
+        heroImageContainer.style.transform = `translateX(-${homeCurrentImagePosition}%)`;
+        changeImagePosition(homeCurrentImagePosition);
     }
 }
 
 //change image positions cirlces styles
-function changeImagePosition(currentPosition) {
+function changeImagePosition(homeCurrentImagePosition) {
     imagePositions.forEach((position, index) => {
         position.classList.remove('active');
-        if (index === 0 && currentPosition === 0) {
+        if (index === 0 && homeCurrentImagePosition === 0) {
             position.classList.add('active');
-        } else if (index === 1 && currentPosition === 100) {
+        } else if (index === 1 && homeCurrentImagePosition === 100) {
             position.classList.add('active');
-        } else if (index === 2 && currentPosition === 200) {
+        } else if (index === 2 && homeCurrentImagePosition === 200) {
             position.classList.add('active');
         }
     });
