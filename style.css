@@ -11,7 +11,7 @@
     --newGold: #F7DB40;
     --gold: #e7c566;
     --goldMidOpacity: #e7c566ad;
-    --goldLowOpacity: rgba(212, 175, 55, 0.6);
+    --goldLowOpacity: rgba(212, 175, 55, 0.5);
     --white: rgba(255, 255, 255, .87);
     --whiteMidOpacity: rgba(255, 255, 255, 0.75);
     --whiteLowOpacity: rgba(255, 255, 255, 0.5);
@@ -151,7 +151,7 @@
 .project-support-text span,
 .project-deal-text span {
     text-decoration: underline;
-    text-decoration-thickness: 1.3px;
+    /* text-decoration-thickness: 1.3px; */
     text-decoration-color: #e7c56600;
     transition: text-decoration-color 500ms ease 700ms;
 }
@@ -213,9 +213,8 @@
 .project-pricing-title,
 .project-deal-title,
 .project-house-plan-title {
-    /* text-indent: 1px; */
     font-size: 1.7rem;
-    margin: 2.5rem 0 .5rem 0;
+    margin: 3rem 0 .5rem 0;
     line-height: 34px;
 }
 
@@ -322,14 +321,17 @@
     margin: 0 auto;
 }
 
-.house-plan-slider-buttons {
+.house-plan-slider-buttons,
+.project-image-slider-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
+    padding: 0 .3rem;
     /* padding: 0 .1rem; */
 }
 
-.house-plan-button {
+.house-plan-button,
+.project-image-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -340,35 +342,40 @@
     transition: scale 100ms ease;
 }
 
-.house-plan-button:active {
+.house-plan-button:active,
+.project-image-button:active {
     scale: 1.08;
 }
 
-.house-plan-button:nth-child(1) img {
+.house-plan-button:nth-child(1) img,
+.project-image-button:nth-child(1) img {
     rotate: 90deg;
     margin-right: .1rem;
 }
 
-.house-plan-button:nth-child(3) img {
+.house-plan-button:nth-child(3) img,
+.project-image-button:nth-child(3) img {
     rotate: -90deg;
     margin-left: .1rem;
 }
 
-.project-plan-image-positions-container {
+.project-plan-image-positions-container,
+.project-image-positions-container {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.project-plan-image-positon {
+.project-plan-image-positon,
+.project-image-positon {
     display: block;
     width: 20px;
     height: 2px;
-    /* border-radius: 50%; */
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.project-plan-image-positon.active {
+.project-plan-image-positon.active,
+.project-image-positon.active {
     background-color: var(--gold);
 }
 
