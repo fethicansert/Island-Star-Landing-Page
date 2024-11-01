@@ -95,7 +95,7 @@ const observer2 = new IntersectionObserver(function (entries, observer) {
         }
     });
 }, intersectionOptions2);
-document.querySelectorAll('.projects-section h3').forEach(header => observer2.observe(header));
+document.querySelectorAll('.sub-title').forEach(header => observer2.observe(header));
 
 
 //FUNCTIONS

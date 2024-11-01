@@ -43,8 +43,64 @@
     }
 }
 
+.about-us-logo-container {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.about-us-logo-container img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-us-section {
+    padding: 2.8rem .6rem 2rem .6rem;
+    z-index: 2;
+}
+
+.about-us-title {
+    width: fit-content;
+    position: relative;
+    color: var(--headerColor);
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.about-us-title-line-short,
+.about-us-title-line-long {
+    position: absolute;
+    background: var(--gold);
+    bottom: -1%;
+}
+
+.about-us-title-line-long {
+    width: 102%;
+    height: 2px;
+    left: 0%;
+    /* transform: translateX(-170%); */
+}
+
+.about-us-title-line-short {
+    z-index: -1;
+    width: 2px;
+    height: 55%;
+    left: 102%;
+    /* transform: translateY(-360%); */
+}
+
+/* .about-us-logo {} */
+
 .projects-section {
     padding: 2.8rem .6rem 2rem .6rem
+}
+
+.projects-title-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 .projects-title {
@@ -85,14 +141,19 @@
     animation: projectsTitleSlideDown 1.5s ease forwards;
 }
 
-.projects-title-container {
-    display: flex;
-    align-items: center;
-}
-
 .project-name-title {
     font-size: 2rem;
     margin: 3rem auto 0 auto;
+}
+
+.house-layout-title {
+    line-height: 32px;
+}
+
+.sub-title {
+    font-size: 1.7rem;
+    margin: 3.3rem 0 .5rem 0;
+    line-height: 35px;
 }
 
 .style-title {
@@ -103,7 +164,7 @@
     position: absolute;
     width: 19px;
     height: 19px;
-    left: -1.4%;
+    left: -1.5%;
     top: -1.4%;
     transform: translateY(-65%);
     transition: opacity 1s ease 250ms, transform 1.25s ease 200ms;
@@ -127,29 +188,21 @@
     width: 2.5px;
 }
 
-.project-description,
-.project-pricing-text,
-.project-pricing-sub-text,
-.project-support-text,
-.project-investment-text,
-.project-deal-text,
-.project-house-plan-text {
+.project-text {
     font-size: .95rem;
     line-height: 23px;
     color: var(--textColor);
 }
 
-.project-description {
-    position: relative;
+.project-pricing-sub-text {
     margin-top: .5rem;
 }
 
-.project-description span,
-.project-pricing-text span,
-.project-pricing-sub-text span,
-.project-investment-text span,
-.project-support-text span,
-.project-deal-text span {
+.project-description {
+    margin-top: .5rem;
+}
+
+.project-text span {
     text-decoration: underline;
     /* text-decoration-thickness: 1.3px; */
     text-decoration-color: #e7c56600;
@@ -158,7 +211,7 @@
 
 .project-image-container {
     position: relative;
-    margin: 2rem auto 0 auto;
+    margin: 1.3rem auto 0 auto;
     width: 100%;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4)
 }
@@ -202,21 +255,6 @@
     top: -2.8%;
 }
 
-.house-layout-title {
-    line-height: 32px;
-}
-
-.house-layout-title,
-.project-location-title,
-.project-support-title,
-.project-investment-title,
-.project-pricing-title,
-.project-deal-title,
-.project-house-plan-title {
-    font-size: 1.7rem;
-    margin: 3rem 0 .5rem 0;
-    line-height: 34px;
-}
 
 .project-detail-container {
     display: grid;
@@ -258,34 +296,34 @@
 .projects-sub-detail {
     line-height: 22px;
     max-height: 0;
-    transition: all 600ms ease;
+    transition: all 750ms ease;
 }
 
 .detail-0-active {
-    max-height: 139px;
-}
-
-.detail-1-active {
-    max-height: 120px;
-}
-
-.detail-2-active {
     max-height: 160px;
 }
 
+.detail-1-active {
+    max-height: 140px;
+}
+
+.detail-2-active {
+    max-height: 180px;
+}
+
 .detail-3-active {
-    max-height: 118px;
+    max-height: 140px;
 }
 
 .detail-4-active,
 .detail-5-active,
 .detail-6-active {
-    max-height: 96px;
+    max-height: 115px;
 }
 
-.projects-sub-detail.active {
+/* .projects-sub-detail.active {
     max-height: 158px
-}
+} */
 
 .projects-sub-detail-text {
     overflow: hidden;
@@ -298,7 +336,7 @@
 
 .projects-sub-detail-text.active {
     opacity: 1;
-    transition: opacity ease 400ms 400ms;
+    transition: opacity ease 400ms 500ms;
 }
 
 .project-detail-arrow {
@@ -327,7 +365,6 @@
     justify-content: space-between;
     margin-top: 1.2rem;
     padding: 0 .3rem;
-    /* padding: 0 .1rem; */
 }
 
 .house-plan-button,
@@ -382,15 +419,6 @@
 .project-google-map {
     width: 100%;
     height: 200px;
-}
-
-.project-pricing-sub-text {
-    margin-top: .5rem;
-}
-
-.apply-text {
-    margin-top: 1rem;
-    font-size: 1.1rem;
 }
 
 .project-user-input {
