@@ -107,7 +107,7 @@
 
         <div id="arrows-container" class="arrows-container">
             <div role="button" id="arrow-circle-left" class="arrow-circle" aria-label="Slide left circle button">
-                <i class="fa-solid fa-arrow-left"></i>
+                <img width="18px" src="images/left-chevron.png">
             </div>
             <div class="image-positions-container" aria-label="Current Position of image">
                 <span class="image-positon active"></span>
@@ -115,7 +115,7 @@
                 <span class="image-positon"></span>
             </div>
             <div role="button" id="arrow-circle-right" class="arrow-circle" aria-label="Slide right circle button">
-                <i class="fa-solid fa-arrow-right"></i>
+                <img width="18px" src="images/left-chevron.png">
             </div>
         </div>
 
@@ -124,19 +124,19 @@
     </section>
 
     <section class="about-us-section">
-
-        <h2 class="about-us-title">
-            About us
-            <span class="about-us-title-line-long"></span>
-            <span class="about-us-title-line-short"></span>
-        </h2>
-
+        <div class="projects-title-container">
+            <h2 class="animate-title">
+                <span class="animate-title-line-long"></span>
+                <span class="animate-title-line-short"></span>
+                About Us
+            </h2>
+        </div>
         <h3 class="sub-title style-title">
             <span class="title-style-flex">
                 <span></span>
                 <span></span>
             </span>
-            Who we are ?
+            Who we are<span class="style-punctuation">?</span>
         </h3>
 
         <p class="project-text">
@@ -151,7 +151,8 @@
                 <span></span>
                 <span></span>
             </span>
-            Trusted Team
+            Trusted Team<span class="style-punctuation">!</span>
+
         </h3>
 
         <p class="project-text">
@@ -161,19 +162,29 @@
         </p>
 
         <div class="about-us-logo-container">
-            <img src="images/logo.png">
+
+            <img src="images/latest28.png">
         </div>
 
     </section>
 
     <section class="projects-section">
+
+        <div class="projects-section-overlay"></div>
+        <div class="projects-popup">
+            <h4>Application Submitted</h4>
+            <p>We will get back to you as soon as possible. Thank you
+                for your interest.</p>
+
+            <button class="popup-button">Close</button>
+        </div>
+
         <div class="projects-title-container">
-            <h2 class="projects-title">
+            <h2 class="animate-title">
                 Projects
-                <span class="project-title-line-long"></span>
-                <span class="project-title-line-short"></span>
+                <span class="animate-title-line-long"></span>
+                <span class="animate-title-line-short"></span>
             </h2>
-            <!-- <img src="images/home.png" width="66px"> -->
         </div>
 
         <h3 class="sub-title style-title">
@@ -199,12 +210,11 @@
             secure your place today!
         </p>
 
-        <div class="project-image-container">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <img class="project-image" src="images/project_image0.webp" alt="proje resmi">
+        <div class="project-image-slider">
+            <div class="image-load-spinner">
+                <span class="loader"></span>
+            </div>
+            <img class="project-image" src="images/project_image0.webp" alt="proje resmi" onload="removeLoading(this)">
         </div>
 
         <div class="project-image-slider-buttons">
@@ -278,6 +288,7 @@
                         master bedroom, this property provides convenience and privacy for everyone. The main bathroom
                         is spacious and stylish, while the additional bathroom ensures comfort and accessibility
                         throughout. Each space is designed for relaxation, enhancing the home’s inviting atmosphere.
+                </div>
             </li>
 
             <li class="project-detail-container">
@@ -357,8 +368,15 @@
         <p class="project-text">Explore the detailed plan of your future home. Each space is designed for
             comfort, functionality, and style.
             Visualize your new lifestyle with our floor plan.</p>
-        <div class="project-plan-image-container">
-            <img class="project-plan-image" src="images/house_plan0.webp">
+
+        <div class="project-plan-image-slider">
+            <div class="image-load-spinner">
+                <span class="loader"></span>
+            </div>
+            <img class="project-plan-image" src="images/house_plan0.webp" onload="removeLoading(this)">
+            <div class="plan-image-zoom">
+                <img src="images/zoom-in.png">
+            </div>
         </div>
 
         <div class="house-plan-slider-buttons">
@@ -388,7 +406,8 @@
         <div class="project-google-map-container">
             <iframe class="project-google-map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20622.44618142658!2d33.47284479950203!3d35.21042740219573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de3e6754cbbad3%3A0x9d07acc884785b2e!2sDemirhan!5e0!3m2!1str!2s!4v1729939773366!5m2!1str!2s"
-                style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
+                loading="lazy"></iframe>
         </div>
 
         <h3 class="sub-title style-title">
@@ -406,7 +425,7 @@
                 delivery</span> or <span>through an installment plan</span>.
         </p>
 
-        <p class="project-pricing-sub-text">
+        <p class="project-pricing-sub-text project-text">
             Additionally, we offer <span>flexible installment options</span> for those who prefer a <span>tailored
                 payment schedule</span>.
 
@@ -446,12 +465,12 @@
                 <span></span>
                 <span></span>
             </span>
-            Dream Villa Awaits!
+            Dream Villa Awaits<span class="style-punctuation">!</span>
         </h3>
         <p class="project-text">If you want to own a villa from this project, apply without delay and prepare
             your down payments. <span>Don't miss this opportunity!</span></p>
         <div>
-            <input class="project-user-input" type="number" placeholder="Enter your mobile number please.">
+            <input class="project-user-input" type="number" placeholder="Enter your mobile number please">
             <button class="project-user-apply-btn">apply now</button>
         </div>
 
